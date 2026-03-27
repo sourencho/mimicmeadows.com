@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mimic Meadows</title>
+  <style>
+    @font-face {
+      font-family: 'Corset';
+      src: url('Corset.ttf') format('truetype');
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #141f16;
+      color: #f0ede6;
+      font-family: 'Corset', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    .banner {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 24px;
+      letter-spacing: 0.04em;
+      padding: 1.5rem 1rem;
+      color: #d4cfc6;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .steam-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: fit-content;
+      margin: 1.5rem auto;
+      padding: 0.65rem 1.5rem;
+      background-color: #4c9a2a;
+      color: #f0ede6;
+      font-family: 'Corset', Georgia, serif;
+      font-size: 18px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .steam-btn img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+
+    .steam-btn:hover {
+      background-color: #5cb832;
+    }
+
+    .discord-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: fit-content;
+      margin: 0 auto 1.5rem;
+      padding: 0.65rem 1.5rem;
+      background-color: #7785cc;
+      color: #f0ede6;
+      font-family: 'Corset', Georgia, serif;
+      font-size: 18px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .discord-btn img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+
+    .discord-btn:hover {
+      background-color: #8f9ed6;
+    }
+
+    @media (min-width: 768px) {
+      .tagline {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img class="banner" src="mimic_banner.png" alt="Mimic Meadows" />
+
+  <p class="tagline">A puzzle game about transforming into animals by mimicking their movement. <br> Discover creative ways to wield this power while solving mind-bending puzzles. And attempt to unearth the many secrets of the meadows.</p>
+
+  <a class="steam-btn" href="https://store.steampowered.com/app/4136640" target="_blank">
+    Wishlist on Steam
+    <img src="steam.svg" alt="Steam" />
+</a>
+
+  <a class="discord-btn" href="#" target="_blank">
+    Join the Discord
+    <img src="discord.svg" alt="Discord" />
+  </a>
+
+</body>
+</html>
