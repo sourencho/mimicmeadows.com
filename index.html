@@ -94,6 +94,21 @@
       background-color: #8f9ed6;
     }
 
+    .corner-img {
+      position: fixed;
+      bottom: 10px;
+      width: 80px;
+      pointer-events: none;
+    }
+
+    .corner-img.left {
+      left: 10px;
+    }
+
+    .corner-img.right {
+      right: 10px;
+    }
+
     @media (min-width: 768px) {
       .tagline {
         padding: 2rem 1rem;
@@ -118,6 +133,39 @@
     <img src="discord.svg" alt="Discord" />
   </a>
 -->
+
+
+  <img class="corner-img left" src="bottom_left.png" alt="" />
+  <img class="corner-img right" src="bottom_right.png" alt="" />
+
+  <script>
+    const leftImg = document.querySelector('.corner-img.left');
+    const rightImg = document.querySelector('.corner-img.right');
+    const contentEls = document.querySelectorAll('.banner, .tagline, .steam-btn, .discord-btn');
+
+    function rectsOverlap(a, b) {
+      return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+    }
+
+    function checkOverlap() {
+      const leftRect = leftImg.getBoundingClientRect();
+      const rightRect = rightImg.getBoundingClientRect();
+      let leftOverlaps = false, rightOverlaps = false;
+
+      contentEls.forEach(el => {
+        if (el.offsetParent === null) return;
+        const rect = el.getBoundingClientRect();
+        if (rectsOverlap(rect, leftRect)) leftOverlaps = true;
+        if (rectsOverlap(rect, rightRect)) rightOverlaps = true;
+      });
+
+      leftImg.style.visibility = leftOverlaps ? 'hidden' : '';
+      rightImg.style.visibility = rightOverlaps ? 'hidden' : '';
+    }
+
+    window.addEventListener('resize', checkOverlap);
+    checkOverlap();
+  </script>
 
 </body>
 </html>
